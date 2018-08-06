@@ -1,0 +1,8 @@
+FROM monroe/base
+
+MAINTAINER cise@simula.no
+
+COPY files/* /opt/monroe/
+COPY files/adaptation/ /opt/monroe/adaptation/
+
+ENTRYPOINT ["dumb-init", "--", "/usr/bin/python", "/opt/monroe/monroe-astream-client-lightweight.py"]
